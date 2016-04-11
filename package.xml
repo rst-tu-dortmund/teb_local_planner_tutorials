@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<package>
+  <name>teb_local_planner_tutorials</name>
+  <version>0.0.0</version>
+  <description>The teb_local_planner_tutorials package</description>
+
+  <maintainer email="christoph.roesmann@tu-dortmund.de">Christoph Rösmann</maintainer>
+
+
+  <license>BSD</license>
+
+  <!--url type="website">http://wiki.ros.org/teb_local_planner_tutorials</url-->
+
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <run_depend>stage_ros</run_depend>
+  <run_depend>navigation</run_depend>
+  <run_depend>teb_local_planner</run_depend>
+
+
+  <!-- The export tag contains other, unspecified, tags -->
+  <export>
+    <!-- Other tools can request additional information be placed here -->
+  </export>
+
+</package>

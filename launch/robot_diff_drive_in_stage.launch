@@ -1,0 +1,6 @@
+<launch>
+
+	<node pkg="stage_ros" type="stageros" name="stageros" args="$(find teb_local_planner_tutorials)/stage/maze_diff_drive.world">
+  	</node>
+
+</launch>
