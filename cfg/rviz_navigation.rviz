@@ -82,8 +82,7 @@ Visualization Manager:
       Marker Topic: /move_base/TebLocalPlannerROS/teb_markers
       Name: TebMarker
       Namespaces:
-        PointObstacles: true
-        TebContainer: true
+        {}
       Queue Size: 100
       Value: true
     - Arrow Length: 0.3
@@ -162,15 +161,15 @@ Visualization Manager:
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 2.71668
-        Y: 5.39072
-        Z: -1.32054
+        X: 5.92505
+        Y: 5.02697
+        Z: -1.33751
       Name: Current View
       Near Clip Distance: 0.01
-      Pitch: 1.1104
+      Pitch: 1.5254
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 0.0572464
+      Yaw: 4.71543
     Saved: ~
 Window Geometry:
   Displays:
