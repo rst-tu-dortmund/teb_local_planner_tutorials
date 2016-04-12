@@ -11,7 +11,7 @@ define laser ranger
   size [ 0.06 0.15 0.03 ]
 )
 
-define diff_drive_robot position
+define carlike_robot position
 (
   pose [ 0.0 0.0 0.0 0.0 ]
 
@@ -23,8 +23,9 @@ define diff_drive_robot position
   color "red"
 
   # kinematics
-  drive "diff"
-
+  drive "car"
+  wheelbase 1.0
+  
   # spawn sensors
   laser(pose [ -0.1 0.0 -0.11 0.0 ])
 )
