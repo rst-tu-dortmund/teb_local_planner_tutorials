@@ -1,5 +1,5 @@
-#---standard pioneer footprint---
 
+#---standard pioneer footprint---
 #---(in meters)---
 footprint: [ [0.254, -0.0508], [0.1778, -0.0508], [0.1778, -0.1778], [-0.1905, -0.1778], [-0.254, 0], [-0.1905, 0.1778], [0.1778, 0.1778], [0.1778, 0.0508], [0.254, 0.0508] ]
 
@@ -16,7 +16,7 @@ obstacle_layer:
  combination_method: 1
 
  observation_sources: laser_scan_sensor
- laser_scan_sensor: {sensor_frame: base_laser_link, data_type: LaserScan, topic: scan, marking: true, clearing: true}
+ laser_scan_sensor: {data_type: LaserScan, topic: scan, marking: true, clearing: true}
 
 
 inflation_layer:
