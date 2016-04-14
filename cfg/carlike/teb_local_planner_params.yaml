@@ -69,7 +69,6 @@ TebLocalPlannerROS:
  weight_optimaltime: 1
  weight_obstacle: 50
  weight_dynamic_obstacle: 10 # not in use yet
- alternative_time_cost: False # not in use yet
 
  # Homotopy Class Planner
 
@@ -77,6 +76,9 @@ TebLocalPlannerROS:
  enable_multithreading: True
  simple_exploration: False
  max_number_classes: 4
+ selection_cost_hysteresis: 1.0
+ selection_obst_cost_scale: 1.0
+ selection_alternative_time_cost: False
  roadmap_graph_no_samples: 15
  roadmap_graph_area_width: 5
  h_signature_prescaler: 0.5
