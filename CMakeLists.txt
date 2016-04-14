@@ -154,7 +154,7 @@ catkin_package(
 # )
 
 install(DIRECTORY
-  launch cfg maps stage
+  launch cfg maps stage scripts
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
   PATTERN ".svn" EXCLUDE
 )
