@@ -32,6 +32,8 @@
 		<param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
 		<param name="controller_frequency" value="5.0" />
 		<param name="controller_patience" value="15.0" />
+
+                <param name="clearing_rotation_allowed" value="false" /> <!-- Our carlike robot is not able to rotate in place -->
 	</node>
 
 

@@ -34,5 +34,5 @@ resample_interval: 1
 
 ## Increase tolerance because the computer can get quite busy 
 transform_tolerance: 1.0
-recovery_alpha_slow: 0.0
-recovery_alpha_fast: 0.0
+recovery_alpha_slow: 0.001
+recovery_alpha_fast: 0.1

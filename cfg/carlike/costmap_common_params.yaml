@@ -13,7 +13,7 @@ obstacle_layer:
  obstacle_range: 3.0
  raytrace_range: 3.5
  inflation_radius: 0.2
- track_unknown_space: true
+ track_unknown_space: false
  combination_method: 1
 
  observation_sources: laser_scan_sensor
