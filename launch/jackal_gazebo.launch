@@ -1,11 +1,15 @@
 <!-- 
-  Simulate a differential drive robot with the teb_local_planner in stage:
-  - stage
+  Simulate Jackal robot with the teb_local_planner in gazebo:
+  - gazebo including the jackal model
   - map_server
   - move_base
   - static map
   - amcl
   - rviz view
+
+  ADDITIONAL REQUIREMENTS/DEPENDENCIES:
+  - jackal_navigation
+  - jackal_gazebo
  -->
 <launch>
 
