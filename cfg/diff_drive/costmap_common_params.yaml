@@ -1,8 +1,4 @@
-
-#---standard pioneer footprint---
-#---(in meters)---
-robot_radius: 0.17
-
+footprint: [ [-0.125,0.125], [0.125,0.125], [0.125,-0.125], [-0.125,-0.125] ]
 
 transform_tolerance: 0.2
 map_type: costmap
@@ -18,12 +14,10 @@ obstacle_layer:
  observation_sources: laser_scan_sensor
  laser_scan_sensor: {data_type: LaserScan, topic: scan, marking: true, clearing: true}
 
-
 inflation_layer:
   enabled:              true
-  cost_scaling_factor:  10.0  # exponential rate at which the obstacle cost drops off (default: 10)
   inflation_radius:     0.5  # max. distance from an obstacle at which costs are incurred for planning paths.
 
 static_layer:
   enabled:              true
-  map_topic:            "/map"
+

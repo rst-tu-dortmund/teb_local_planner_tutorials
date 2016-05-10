@@ -43,11 +43,12 @@
 	</node>
 
 	<node pkg="amcl" type="amcl" name="amcl" output="screen">
-		<rosparam file="$(find teb_local_planner_tutorials)/cfg/amcl_params.yaml" command="load" />
-
 	        <param name="initial_pose_x"            value="2"/>
 		<param name="initial_pose_y"            value="2"/>
 		<param name="initial_pose_a"            value="0"/>
+                <param name="odom_model_type"           value="diff"/>
+                <param name="use_map_topic"             value="true"/>
+                <param name="transform_tolerance"       value="0.5"/>
 	</node>
 
 	  <!--  **************** Visualisation ****************  -->
