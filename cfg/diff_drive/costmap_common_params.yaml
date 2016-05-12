@@ -1,13 +1,14 @@
 footprint: [ [-0.125,0.125], [0.125,0.125], [0.125,-0.125], [-0.125,-0.125] ]
 
-transform_tolerance: 0.2
+transform_tolerance: 0.5
 map_type: costmap
+global_frame: /map
+robot_base_frame: base_link
 
 obstacle_layer:
  enabled: true
  obstacle_range: 3.0
  raytrace_range: 4.0
- inflation_radius: 0.2
  track_unknown_space: true
  combination_method: 1
 
