@@ -46,9 +46,11 @@ TebLocalPlannerROS:
  optimization_activate: True
  optimization_verbose: False
  penalty_epsilon: 0.1
- weight_max_vel_x: 2
+ #weight_max_vel_x: 2 # ros indigo/jade
+ weight_max_vel_xy: 2 # ros kinetic
  weight_max_vel_theta: 1
- weight_acc_lim_x: 1
+ #weight_acc_lim_x: 1 # ros indigo/jade
+ weight_acc_lim_xy: 1 # ros kinetic
  weight_acc_lim_theta: 1
  weight_kinematics_nh: 1000
  weight_kinematics_forward_drive: 1
