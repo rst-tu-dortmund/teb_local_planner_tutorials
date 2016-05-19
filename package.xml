@@ -15,7 +15,6 @@
   <buildtool_depend>catkin</buildtool_depend>
 
   <run_depend>stage_ros</run_depend>
-  <run_depend>navigation</run_depend>
   <run_depend>teb_local_planner</run_depend>
 
 
