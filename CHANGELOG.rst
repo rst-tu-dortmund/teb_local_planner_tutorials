@@ -2,8 +2,8 @@
 Changelog for package teb_local_planner_tutorials
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.2.1 (2016-11-15)
+------------------
 * Default parameters updated
 * Navigation run-dependencies added
 
