@@ -7,6 +7,8 @@ footprint_padding: 0.00
 transform_tolerance: 0.2
 map_type: costmap
 
+always_send_full_costmap: true
+
 obstacle_layer:
  enabled: true
  obstacle_range: 3.0
