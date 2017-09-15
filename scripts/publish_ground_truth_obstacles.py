@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-import rospy, math, random
+import rospy, math, random, re
 from tf.transformations import quaternion_from_euler
 from geometry_msgs.msg import Twist, PolygonStamped, Quaternion, QuaternionStamped, TwistWithCovariance, Point32
 from nav_msgs.msg import Odometry
@@ -48,10 +48,15 @@ def callback_base_pose_ground_truth(base_pose_ground_truth, obst_id):
 
 def init_subscribers():
   rospy.init_node("GroundTruthObstacles")
-  numObstacles = rospy.get_param('numObstacles')
 
-  for obst_id in xrange(1, numObstacles+1, 1):
-    topic = '/robot_{}/base_pose_ground_truth'.format(obst_id)
+  # Setup a subscriber for each obstacle -> get obstacle ids from published topics
+  published_topics, published_types = zip(*rospy.get_published_topics())
+  r = re.compile("^\/robot_([1-9][0-9]*)\/base_pose_ground_truth$")
+  bpgt_topics = filter(r.match, published_topics)
+
+  for topic in bpgt_topics:
+    match = r.search(topic)
+    obst_id = int(match.group(1))
     sub = rospy.Subscriber(topic, Odometry, callback_base_pose_ground_truth, obst_id)
 
   r = rospy.Rate(10)

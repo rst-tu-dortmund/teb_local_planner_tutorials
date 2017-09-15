@@ -50,7 +50,7 @@
   <node name="standalone_converter" pkg="costmap_converter" type="standalone_converter" output="screen" />
 
   <!--  **************** Visualisation ****************  -->
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find teb_local_planner_tutorials)/cfg/rviz_navigation.rviz">
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find teb_local_planner_tutorials)/cfg/rviz_navigation_cc.rviz">
     <remap from="/move_base_simple/goal" to="/robot_0/move_base_simple/goal" />
   </node>
 

@@ -9,23 +9,36 @@ TebLocalPlannerROS:
 
   ## Costmap converter plugin   
   #costmap_converter_plugin: "costmap_converter::CostmapToPolygonsDBSMCCH"
-  costmap_converter_plugin: "costmap_converter::CostmapToLinesDBSRANSAC"
+  #costmap_converter_plugin: "costmap_converter::CostmapToLinesDBSRANSAC"
   #costmap_converter_plugin: "costmap_converter::CostmapToLinesDBSMCCH"
   #costmap_converter_plugin: "costmap_converter::CostmapToPolygonsDBSConcaveHull"
+  costmap_converter_plugin: "costmap_converter::CostmapToDynamicObstacles"
   costmap_converter_spin_thread: True
   costmap_converter_rate: 5
  
  
-  ## Configure plugins (namespace move_base/costmap_to_lines or move_base/costmap_to_polygons)
-  ## costmap_converter/CostmapToLinesDBSRANSAC, costmap_converter/CostmapToLinesDBSMCCH, costmap_converter/CostmapToPolygonsDBSMCCH
-  costmap_converter/CostmapToLinesDBSRANSAC:
-    cluster_max_distance: 0.4
-    cluster_min_pts: 2
-    ransac_inlier_distance: 0.15
-    ransac_min_inliers: 10
-    ransac_no_iterations: 1500
-    ransac_remainig_outliers: 3
-    ransac_convert_outlier_pts: True
-    ransac_filter_remaining_outlier_pts: False
-    convex_hull_min_pt_separation: 0.1
- 
+  ## Configure plugins (namespace move_base/CostmapToDynamicObstacles)
+  costmap_converter/CostmapToDynamicObstacles:
+    alpha_slow: 0.3
+    alpha_fast: 0.85
+    beta: 0.85
+    min_sep_between_slow_and_fast_filter: 80
+    min_occupancy_probability: 180
+    max_occupancy_neighbors: 100
+    morph_size: 1
+    filter_by_area: True
+    min_area: 3
+    max_area: 300
+    filter_by_circularity: True
+    min_circularity: 0.2
+    max_circularity: 1.0
+    filter_by_inertia: True
+    min_intertia_ratio: 0.2
+    max_inertia_ratio: 1.0
+    filter_by_convexity: False
+    min_convexity: 0.0
+    max_convexity: 1.0
+    dt: 0.2
+    dist_thresh: 60.0
+    max_allowed_skipped_frames: 3
+    max_trace_length: 10
