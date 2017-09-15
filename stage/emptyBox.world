@@ -21,12 +21,12 @@ model
 # throw in a robot
 myrobot
 (
-  pose [ -1.0 0.0 0.0 0.0 ]
+  pose [ -2.0 0.0 0.0 -90.0 ]
   name "myRobot"
 )
 
 myobstacle
 (
-  pose [ 1.0 1.0 0.0 0.0 ]
+  pose [ 0.0 1.0 0.0 0.0 ]
   name "obstacle"
 )

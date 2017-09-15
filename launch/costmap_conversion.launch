@@ -14,14 +14,17 @@
     <param name="frame_id" value="map"/>
   </node>
 
+  <!-- ******** Localization ********* -->
+  <!-- See stage world file for initial poses -->
+  <node pkg="tf" type="static_transform_publisher" name="perfect_loc_robot" args="-2 0 0 -1.570796 0 0 /map robot_0/odom 100" />
+  <node pkg="tf" type="static_transform_publisher" name="perfect_loc_obstacle" args="0 1 0 0 0 0 /map robot_1/odom 100" />
+
    <!--  ************* Navigation Ego Robot ************  -->
   <group ns="robot_0">
     <param name="tf_prefix" value="robot_0"/>
     <!-- work around for footprint reload -->
     <rosparam command="delete" ns="move_base" />
 
-    <node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="2 3 0 0 0 0 1 /map /robot_0/odom 100" />
-  
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
       <rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/costmap_common_params.yaml" command="load" ns="global_costmap" />
       <rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/costmap_common_params.yaml" command="load" ns="local_costmap" />
