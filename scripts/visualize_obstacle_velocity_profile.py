@@ -6,7 +6,8 @@
 # Author: christoph.roesmann@tu-dortmund.de
 
 import rospy, math
-from teb_local_planner.msg import FeedbackMsg, TrajectoryMsg, TrajectoryPointMsg, ObstacleMsg
+from teb_local_planner.msg import FeedbackMsg, TrajectoryMsg, TrajectoryPointMsg
+from costmap_converter.msg import ObstacleArrayMsg
 from geometry_msgs.msg import PolygonStamped, Point32, Twist
 import numpy as np
 import matplotlib.pyplot as plotter
@@ -27,21 +28,22 @@ def twist_callback(data):
   trajectory_gt.append(point)
 
 
-def obstacleMsg_callback(data):
+def obstacleArrayMsg_callback(data):
   global trajectory_est
   global start_t
 
   if (start_t == 0):
     start_t = rospy.Time.now()
-
+  
   point = TrajectoryPointMsg()
   point.time_from_start = (rospy.Time.now()-start_t)
-  if(len(data.velocities) > 0):
-    point.velocity.linear.x = data.velocities[0].twist.linear.x
-    point.velocity.linear.y = data.velocities[0].twist.linear.y
-    point.velocity.angular.z = data.velocities[0].twist.angular.z
+  if(len(data.obstacles) > 0):
+    point.velocity.linear.x = data.obstacles[0].velocities.twist.linear.x
+    point.velocity.linear.y = data.obstacles[0].velocities.twist.linear.y
+    point.velocity.angular.z = data.obstacles[0].velocities.twist.angular.z
 
     trajectory_est.append(point)
+    
 
 
 def plot_velocity_profiles(fig, ax_vx, ax_vy, t_gt, v_x_gt, v_y_gt, omega_gt, t_est, v_x_est, v_y_est, omega_est):
@@ -69,8 +71,8 @@ def velocity_plotter():
   
   topic_name_ground_truth_vel = "cmd_vel"
   rospy.Subscriber(topic_name_ground_truth_vel, Twist, twist_callback, queue_size = 1)
-  topic_name_estimated_vel = "/costmap_obstacles"
-  rospy.Subscriber(topic_name_estimated_vel, ObstacleMsg, obstacleMsg_callback, queue_size = 1)
+  topic_name_estimated_vel = "/standalone_converter/costmap_obstacles"
+  rospy.Subscriber(topic_name_estimated_vel, ObstacleArrayMsg, obstacleArrayMsg_callback, queue_size = 1)
 
   rospy.loginfo("Visualizing ground truth velocity profile published on '%s'.", topic_name_ground_truth_vel)
   rospy.loginfo("Visualizing estimated velocity profile published on '%s'.", topic_name_estimated_vel)

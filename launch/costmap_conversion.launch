@@ -49,7 +49,8 @@
 
   <node name="standalone_converter" pkg="costmap_converter" type="standalone_converter" output="screen">
     <param name="converter_plugin" value="costmap_converter::CostmapToDynamicObstacles" />
-    <param name="odom_topic" value="robot_0/odom" />
+    <param name="costmap_topic" value="/robot_0/move_base/local_costmap/costmap" />
+    <param name="odom_topic" value="/robot_0/odom" />
   </node>
 
   <!--  **************** Visualisation ****************  -->
