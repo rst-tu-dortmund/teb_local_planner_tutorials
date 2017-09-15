@@ -20,7 +20,7 @@
     <!-- work around for footprint reload -->
     <rosparam command="delete" ns="move_base" />
 
-    <node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="0 0 0 0 0 0 1 /map /robot_0/odom 100" />
+    <node pkg="tf" type="static_transform_publisher" name="link1_broadcaster" args="2 3 0 0 0 0 1 /map /robot_0/odom 100" />
   
     <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
       <rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/costmap_common_params.yaml" command="load" ns="global_costmap" />
@@ -47,7 +47,10 @@
     <node name="visualize_obstacle_velocity_profile" pkg="teb_local_planner_tutorials" type="visualize_obstacle_velocity_profile.py" output="screen" />
   </group>
 
-  <node name="standalone_converter" pkg="costmap_converter" type="standalone_converter" output="screen" />
+  <node name="standalone_converter" pkg="costmap_converter" type="standalone_converter" output="screen">
+    <param name="converter_plugin" value="costmap_converter::CostmapToDynamicObstacles" />
+    <param name="odom_topic" value="robot_0/odom" />
+  </node>
 
   <!--  **************** Visualisation ****************  -->
   <node name="rviz" pkg="rviz" type="rviz" args="-d $(find teb_local_planner_tutorials)/cfg/rviz_navigation_cc.rviz">

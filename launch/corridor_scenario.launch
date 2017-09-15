@@ -27,7 +27,6 @@
       <rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/costmap_common_params.yaml" command="load" ns="local_costmap" />
       <rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/local_costmap_params.yaml" command="load" />
       <rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/global_costmap_params.yaml" command="load" />
-      <!--rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/teb_local_planner_params-binary-edge.yaml" command="load" /-->
       <rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/teb_local_planner_params.yaml" command="load" />
       <!-- Here we load our costmap conversion settings -->
       <rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/costmap_converter_params.yaml" command="load" />
@@ -101,6 +100,24 @@
 
   <group ns="robot_10">
     <param name="tf_prefix" value="robot_10"/>
+    <node name="Mover" pkg="teb_local_planner_tutorials" type="move_obstacle.py" output="screen"/>
+    <param name="vel_y" value="0.3" />
+  </group>
+
+  <group ns="robot_11">
+    <param name="tf_prefix" value="robot_11"/>
+    <node name="Mover" pkg="teb_local_planner_tutorials" type="move_obstacle.py" output="screen"/>
+    <param name="vel_y" value="0.3" />
+  </group>
+
+  <group ns="robot_12">
+    <param name="tf_prefix" value="robot_12"/>
+    <node name="Mover" pkg="teb_local_planner_tutorials" type="move_obstacle.py" output="screen"/>
+    <param name="vel_y" value="0.3" />
+  </group>
+
+  <group ns="robot_13">
+    <param name="tf_prefix" value="robot_13"/>
     <node name="Mover" pkg="teb_local_planner_tutorials" type="move_obstacle.py" output="screen"/>
     <param name="vel_y" value="0.3" />
   </group>
