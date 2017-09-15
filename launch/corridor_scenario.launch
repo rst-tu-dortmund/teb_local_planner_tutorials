@@ -29,7 +29,10 @@
       <rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/global_costmap_params.yaml" command="load" />
       <rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/teb_local_planner_params.yaml" command="load" />
       <!-- Here we load our costmap conversion settings -->
-      <rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/costmap_converter_params.yaml" command="load" />
+      <!-- If you active the following line, disable 'ground_truth_obstacles' at the bottom of this script! -->
+      <!-- rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/costmap_converter_params.yaml" command="load" /-->
+      <param name="TebLocalPlannerROS/include_costmap_obstacles" value="False" />
+      <param name="TebLocalPlannerROS/include_dynamic_obstacles" value="True" />
 
       <param name="base_global_planner" value="navfn/NavfnROS" />
       <!--param name="base_global_planner" value="global_planner/GlobalPlanner" />
