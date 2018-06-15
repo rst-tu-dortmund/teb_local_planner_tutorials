@@ -33,13 +33,14 @@ TebLocalPlannerROS:
     
  # Obstacles
     
- min_obstacle_dist: 0.25 # This value must also include our robot radius, since footprint_model is set to "point".
+ min_obstacle_dist: 0.6 # This value must also include our robot radius, since footprint_model is set to "point".
+ inflation_dist: 0.8
+ dynamic_obstacle_inflation_dist: 0.6
+ include_dynamic_obstacles: True
  include_costmap_obstacles: True
  costmap_obstacles_behind_robot_dist: 1.5
  obstacle_poses_affected: 30
- costmap_converter_plugin: ""
- costmap_converter_spin_thread: True
- costmap_converter_rate: 5
+ # costmap_converter parameters are defined in costmap_converter_params.yaml
 
  # Optimization
     
@@ -48,16 +49,18 @@ TebLocalPlannerROS:
  optimization_activate: True
  optimization_verbose: False
  penalty_epsilon: 0.1
- weight_max_vel_x: 2
+ weight_max_vel_x: 3
  weight_max_vel_theta: 1
- weight_acc_lim_x: 1
- weight_acc_lim_theta: 1
+ weight_acc_lim_x: 2
+ weight_acc_lim_theta: 2
  weight_kinematics_nh: 1000
  weight_kinematics_forward_drive: 1
  weight_kinematics_turning_radius: 1
  weight_optimaltime: 1
  weight_obstacle: 50
- weight_dynamic_obstacle: 10 # not in use yet
+ weight_inflation: 0.3
+ weight_dynamic_obstacle: 50
+ weight_dynamic_obstacle_inflation: 0.3
  weight_adapt_factor: 2
 
  # Homotopy Class Planner
@@ -68,7 +71,7 @@ TebLocalPlannerROS:
  max_number_classes: 4
  selection_cost_hysteresis: 1.0
  selection_obst_cost_scale: 1.0
- selection_alternative_time_cost: False
+ selection_alternative_time_cost: True
  
  roadmap_graph_no_samples: 15
  roadmap_graph_area_width: 5
@@ -77,3 +80,4 @@ TebLocalPlannerROS:
  obstacle_keypoint_offset: 0.1
  obstacle_heading_threshold: 0.45
  visualize_hc_graph: False
+ visualize_with_time_as_z_axis_scale: 0.2

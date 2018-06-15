@@ -1,4 +1,4 @@
-image: emptyBox.png
+image: empty_box.png
 resolution: 0.050000
 origin: [-3.0, -3.0, 0.0]
 negate: 0

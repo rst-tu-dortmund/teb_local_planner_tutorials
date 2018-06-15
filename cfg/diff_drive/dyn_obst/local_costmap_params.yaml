@@ -2,11 +2,11 @@ local_costmap:
   global_frame: /map
   robot_base_frame: base_link
   update_frequency: 5.0
-  publish_frequency: 2.0
+  publish_frequency: 5.001 # actually exactly 5.0Hz, see https://github.com/ros-planning/navigation/issues/383
   static_map: false
   rolling_window: true
-  width: 5.5
-  height: 5.5
+  width: 12
+  height: 12
   resolution: 0.1
   transform_tolerance: 0.5
   

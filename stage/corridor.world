@@ -1,5 +1,5 @@
-include "robots/myRobot.inc"
-include "robots/myObstacle.inc"
+include "robots/diff_drive_robot_gps.inc"
+include "robots/obstacle.inc"
 
 define floorplan model
 (
