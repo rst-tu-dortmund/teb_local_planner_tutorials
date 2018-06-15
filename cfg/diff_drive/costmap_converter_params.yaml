@@ -8,12 +8,7 @@
 TebLocalPlannerROS:
 
   ## Costmap converter plugin   
-  #costmap_converter_plugin: "costmap_converter::CostmapToPolygonsDBSMCCH"
-  #costmap_converter_plugin: "costmap_converter::CostmapToLinesDBSRANSAC"
-  #costmap_converter_plugin: "costmap_converter::CostmapToLinesDBSMCCH"
-  #costmap_converter_plugin: "costmap_converter::CostmapToPolygonsDBSConcaveHull"
   costmap_converter_plugin: "costmap_converter::CostmapToDynamicObstacles"
-  static_costmap_converter_plugin: "costmap_converter::CostmapToPolygonsDBSMCCH"
   costmap_converter_spin_thread: True
   costmap_converter_rate: 5
  
@@ -43,3 +38,4 @@ TebLocalPlannerROS:
     dist_thresh: 60.0
     max_allowed_skipped_frames: 3
     max_trace_length: 10
+    static_converter_plugin: "costmap_converter::CostmapToPolygonsDBSMCCH"
