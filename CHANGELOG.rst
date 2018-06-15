@@ -2,8 +2,8 @@
 Changelog for package teb_local_planner_tutorials
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.2.2 (2018-06-15)
+------------------
 * Example scripts, configurations and launch files for planning with dynamic obstacles added
 * Scripts updated to consider the costmap_converter::ObstacleArrayMsg message
 * Contributors: Christoph Rösmann, Franz Albers
