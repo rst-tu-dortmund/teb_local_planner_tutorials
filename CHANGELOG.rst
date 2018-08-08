@@ -2,6 +2,11 @@
 Changelog for package teb_local_planner_tutorials
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* tf prefixes removed to comply with tf2
+* Contributors: Christoph Rösmann
+
 0.2.2 (2018-06-15)
 ------------------
 * Example scripts, configurations and launch files for planning with dynamic obstacles added
