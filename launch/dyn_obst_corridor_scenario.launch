@@ -16,7 +16,6 @@
 
    <!--  ************** Navigation ROBOT 0 *************  -->
   <group ns="robot_0">
-    <param name="tf_prefix" value="robot_0"/>
     <!-- work around for footprint reload -->
   	<rosparam command="delete" ns="move_base" />
 
@@ -26,7 +25,7 @@
       <rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/costmap_common_params.yaml" command="load" ns="global_costmap" />
       <rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/costmap_common_params.yaml" command="load" ns="local_costmap" />
       <rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/dyn_obst/local_costmap_params.yaml" command="load" />
-      <rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/global_costmap_params.yaml" command="load" />
+      <rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/dyn_obst/global_costmap_params.yaml" command="load" />
       <rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/dyn_obst/teb_local_planner_params.yaml" command="load" />
       <!-- Here we load our costmap conversion settings -->
       <!-- If you active the following line, disable 'ground_truth_obstacles' at the bottom of this script! -->

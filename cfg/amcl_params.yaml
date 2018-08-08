@@ -2,7 +2,7 @@ use_map_topic: true
 
 odom_frame_id: "odom"
 base_frame_id: "base_footprint"
-global_frame_id: "/map"
+global_frame_id: "map"
 
 ## Publish scans from best pose at a max of 10 Hz
 odom_model_type: "diff"
