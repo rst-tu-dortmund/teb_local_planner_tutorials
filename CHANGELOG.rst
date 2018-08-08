@@ -2,8 +2,8 @@
 Changelog for package teb_local_planner_tutorials
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.2.3 (2018-08-08)
+------------------
 * tf prefixes removed to comply with tf2
 * Contributors: Christoph Rösmann
 
