@@ -39,7 +39,7 @@
 
 	<!--  ****** Maps *****  -->
 	<node name="map_server" pkg="map_server" type="map_server" args="$(find teb_local_planner_tutorials)/maps/maze.yaml" output="screen">
-		<param name="frame_id" value="/map"/>
+                <param name="frame_id" value="map"/>
 	</node>
 
 	<node pkg="amcl" type="amcl" name="amcl" output="screen">
