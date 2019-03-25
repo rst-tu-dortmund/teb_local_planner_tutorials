@@ -33,6 +33,7 @@ local_inflation_layer:
 local_static_layer:
   enabled:              true
   map_topic:            "/local_map"
+  track_unknown_space:  false
 
 global_static_layer:
   enabled:              true

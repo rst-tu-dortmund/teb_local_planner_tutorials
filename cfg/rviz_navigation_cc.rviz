@@ -5,7 +5,6 @@ Panels:
     Property Tree Widget:
       Expanded:
         - /Local Planner1
-        - /Local Planner1/LocalCostmap1
         - /Global Planner1
         - /Global Planner1/GlobalCostmap1
         - /Robot1/Robot Footprint1
@@ -173,7 +172,7 @@ Visualization Manager:
         - Alpha: 1
           Class: rviz/Map
           Color Scheme: map
-          Draw Behind: false
+          Draw Behind: true
           Enabled: true
           Name: GlobalCostmap
           Topic: /move_base/global_costmap/costmap
@@ -367,16 +366,16 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 44.2448502
+      Distance: 7.9463253
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.0599999987
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: -10.0263414
-        Y: 14.1696577
-        Z: 9.14774609
+        X: -15.6184063
+        Y: 26.1173916
+        Z: 9.15965176
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.0500000007
       Invert Z Axis: false
