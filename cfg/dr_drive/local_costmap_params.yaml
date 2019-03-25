@@ -1,8 +1,8 @@
 local_costmap:
-  global_frame: /base_link
-  robot_base_frame: base_link
-  update_frequency: 5.0
-  publish_frequency: 5.0001
+  global_frame: base_link
+  robot_base_frame: front_link
+  update_frequency: 10.0
+  publish_frequency: 10.0
   static_map: true 
   rolling_window: false
   width: 20

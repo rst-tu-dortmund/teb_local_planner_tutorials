@@ -8,7 +8,7 @@
   <node name="map_server" pkg="map_server" type="map_server" args="$(find teb_local_planner_tutorials)/maps/$(arg map_file).yaml" output="screen">
     <param name="frame_id" value="map"/>
   </node>
-  <node pkg="tf" type="static_transform_publisher" name="front_link_broadcaster" args="0 0 0 1.57 0 0 base_link front_link 50" />
+  <node pkg="tf" type="static_transform_publisher" name="front_link_broadcaster" args="0 0 0 1.57 0 0 base_link front_link 1" />
 
 
     <!-- work around for footprint reload -->
