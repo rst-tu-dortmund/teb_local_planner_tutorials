@@ -1,5 +1,5 @@
 <launch>
-  <arg name="map_file"  default="corridor"/>
+  <arg name="map_file"  default="corridor_resize"/>
 
   <!--  ************** Global Parameters ***************  -->
   <param name="/use_sim_time" value="false"/>
@@ -23,7 +23,7 @@
       <!-- Here we load our costmap conversion settings -->
       <!-- If you active the following line, disable 'ground_truth_obstacles' at the bottom of this script! -->
       <!-- rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/costmap_converter_params.yaml" command="load" /-->
-      <param name="TebLocalPlannerROS/include_costmap_obstacles" value="False" />
+      <param name="TebLocalPlannerROS/include_costmap_obstacles" value="True" />
       <param name="TebLocalPlannerROS/include_dynamic_obstacles" value="True" />
 
       <param name="base_global_planner" value="navfn/NavfnROS" />
@@ -37,8 +37,6 @@
     </node>
 
   <!--  **************** Visualisation ****************  -->
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find teb_local_planner_tutorials)/cfg/rviz_navigation_cc.rviz">
-    <remap from="/move_base_simple/goal" to="/robot_0/move_base_simple/goal" />
-  </node>
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find teb_local_planner_tutorials)/cfg/rviz_navigation_cc.rviz"/>
 
 </launch>
