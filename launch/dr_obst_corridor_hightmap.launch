@@ -1,0 +1,44 @@
+<launch>
+  <arg name="map_file"  default="corridor"/>
+
+  <!--  ************** Global Parameters ***************  -->
+  <param name="/use_sim_time" value="false"/>
+
+  <!--  ******************* Maps *********************** -->
+  <node name="map_server" pkg="map_server" type="map_server" args="$(find teb_local_planner_tutorials)/maps/$(arg map_file).yaml" output="screen">
+    <param name="frame_id" value="map"/>
+  </node>
+  <node pkg="tf" type="static_transform_publisher" name="front_link_broadcaster" args="0 0 0 1.57 0 0 base_link front_link 50" />
+
+
+    <!-- work around for footprint reload -->
+  	<!--rosparam command="delete" ns="move_base" /-->
+
+    <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen">
+      <rosparam file="$(find teb_local_planner_tutorials)/cfg/dr_drive/costmap_common_params.yaml" command="load" ns="local_costmap" />
+      <rosparam file="$(find teb_local_planner_tutorials)/cfg/dr_drive/costmap_common_params.yaml" command="load" ns="global_costmap" />
+      <rosparam file="$(find teb_local_planner_tutorials)/cfg/dr_drive/local_costmap_params.yaml" command="load" />
+      <rosparam file="$(find teb_local_planner_tutorials)/cfg/dr_drive/global_costmap_params.yaml" command="load" />
+      <rosparam file="$(find teb_local_planner_tutorials)/cfg/dr_drive/teb_local_planner_params.yaml" command="load" />
+      <!-- Here we load our costmap conversion settings -->
+      <!-- If you active the following line, disable 'ground_truth_obstacles' at the bottom of this script! -->
+      <!-- rosparam file="$(find teb_local_planner_tutorials)/cfg/diff_drive/costmap_converter_params.yaml" command="load" /-->
+      <param name="TebLocalPlannerROS/include_costmap_obstacles" value="False" />
+      <param name="TebLocalPlannerROS/include_dynamic_obstacles" value="True" />
+
+      <param name="base_global_planner" value="navfn/NavfnROS" />
+      <param name="planner_frequency" value="1.0" />
+      <param name="planner_patience" value="5.0" />
+
+      <param name="base_local_planner" value="teb_local_planner/TebLocalPlannerROS" />
+      <param name="controller_frequency" value="5.0" />
+      <param name="controller_patience" value="15.0" />
+      <remap from="map" to="/map"/>
+    </node>
+
+  <!--  **************** Visualisation ****************  -->
+  <node name="rviz" pkg="rviz" type="rviz" args="-d $(find teb_local_planner_tutorials)/cfg/rviz_navigation_cc.rviz">
+    <remap from="/move_base_simple/goal" to="/robot_0/move_base_simple/goal" />
+  </node>
+
+</launch>
