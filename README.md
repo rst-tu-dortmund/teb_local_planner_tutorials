@@ -11,5 +11,5 @@ Refer to the [teb_local_planner](http://wiki.ros.org/teb_local_planner) ROS wiki
 **Dependencies:**
 
  * *navigation stack* and *teb_local_planner* package
- * *stage*: `sudo apt-get install ros-indigo-stage-ros`
+ * *stage*: `sudo apt-get install ros-melodic-stage-ros`
 
