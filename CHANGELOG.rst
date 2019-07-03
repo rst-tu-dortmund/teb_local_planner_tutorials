@@ -2,6 +2,12 @@
 Changelog for package teb_local_planner_tutorials
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+Forthcoming
+-----------
+* Update of teb parameters
+* comply with tf2: fixed error when using the launch files (thanks to doisyg).
+* Contributors: Christoph Rösmann, doisyg
+
 0.2.3 (2018-08-08)
 ------------------
 * tf prefixes removed to comply with tf2
