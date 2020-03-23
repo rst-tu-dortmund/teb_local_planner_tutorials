@@ -72,7 +72,7 @@ TebLocalPlannerROS:
  selection_cost_hysteresis: 1.0
  selection_obst_cost_scale: 1.0
  selection_alternative_time_cost: True
- 
+
  roadmap_graph_no_samples: 15
  roadmap_graph_area_width: 5
  h_signature_prescaler: 0.5

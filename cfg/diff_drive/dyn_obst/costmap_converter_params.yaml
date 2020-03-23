@@ -1,18 +1,17 @@
 ###########################################################################################
 ## NOTE: Costmap conversion is experimental. Its purpose is to combine many point        ##
-## obstales into clusters, computed in a separate thread in order to improve the overall ## 
+## obstales into clusters, computed in a separate thread in order to improve the overall ##
 ## efficiency of local planning. However, the implemented conversion algorithms are in a ##
 ## very early stage of development. Contributions are welcome!                           ##
 ###########################################################################################
 
 TebLocalPlannerROS:
 
-  ## Costmap converter plugin   
+  ## Costmap converter plugin
   costmap_converter_plugin: "costmap_converter::CostmapToDynamicObstacles"
   costmap_converter_spin_thread: True
   costmap_converter_rate: 5
- 
- 
+
   ## Configure plugins (namespace move_base/CostmapToDynamicObstacles)
   costmap_converter/CostmapToDynamicObstacles:
     alpha_slow: 0.3

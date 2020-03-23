@@ -20,7 +20,6 @@ obstacle_layer:
  observation_sources: laser_scan_sensor
  laser_scan_sensor: {data_type: LaserScan, topic: scan, marking: true, clearing: true}
 
-
 inflation_layer:
   enabled:              true
   cost_scaling_factor:  10.0  # exponential rate at which the obstacle cost drops off (default: 10)

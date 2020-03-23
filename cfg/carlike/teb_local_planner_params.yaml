@@ -1,9 +1,9 @@
 TebLocalPlannerROS:
 
  odom_topic: odom
-    
+
  # Trajectory
-  
+
  teb_autosize: True
  dt_ref: 0.3
  dt_hysteresis: 0.1
@@ -16,9 +16,9 @@ TebLocalPlannerROS:
  exact_arc_length: False
  feasibility_check_no_poses: 2
  publish_feedback: False
-    
+
  # Robot
-         
+
  max_vel_x: 0.4
  max_vel_x_backwards: 0.2
  max_vel_y: 0.0
@@ -44,14 +44,14 @@ TebLocalPlannerROS:
    vertices: [ [0.25, -0.05], [0.18, -0.05], [0.18, -0.18], [-0.19, -0.18], [-0.25, 0], [-0.19, 0.18], [0.18, 0.18], [0.18, 0.05], [0.25, 0.05] ] # for type "polygon"
 
  # GoalTolerance
-    
+
  xy_goal_tolerance: 0.2
  yaw_goal_tolerance: 0.1
  free_goal_vel: False
  complete_global_plan: True
-    
+
  # Obstacles
-    
+
  min_obstacle_dist: 0.27 # This value must also include our robot's expansion, since footprint_model is set to "line".
  inflation_dist: 0.6
  include_costmap_obstacles: True
@@ -59,14 +59,14 @@ TebLocalPlannerROS:
  obstacle_poses_affected: 15
 
  dynamic_obstacle_inflation_dist: 0.6
- include_dynamic_obstacles: True 
+ include_dynamic_obstacles: True
 
  costmap_converter_plugin: ""
  costmap_converter_spin_thread: True
  costmap_converter_rate: 5
 
  # Optimization
-    
+
  no_inner_iterations: 5
  no_outer_iterations: 4
  optimization_activate: True
@@ -113,7 +113,7 @@ TebLocalPlannerROS:
  visualize_with_time_as_z_axis_scale: False
 
 # Recovery
- 
+
  shrink_horizon_backup: True
  shrink_horizon_min_duration: 10
  oscillation_recovery: True
