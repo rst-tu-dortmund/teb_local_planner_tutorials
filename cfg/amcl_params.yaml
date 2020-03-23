@@ -16,7 +16,7 @@ kld_err: 0.05
 kld_z: 0.99
 odom_alpha1: 0.2
 odom_alpha2: 0.2
-## translation std dev, m 
+## translation std dev, m
 odom_alpha3: 0.2
 odom_alpha4: 0.2
 laser_z_hit: 0.5
@@ -32,7 +32,7 @@ update_min_a: 0.2
 
 resample_interval: 1
 
-## Increase tolerance because the computer can get quite busy 
+## Increase tolerance because the computer can get quite busy
 transform_tolerance: 1.0
 recovery_alpha_slow: 0.001
 recovery_alpha_fast: 0.1

@@ -1,7 +1,7 @@
 TebLocalPlannerROS:
-   
+
  # Trajectory
-  
+
  teb_autosize: True
  dt_ref: 0.3
  dt_hysteresis: 0.1
@@ -14,9 +14,9 @@ TebLocalPlannerROS:
  exact_arc_length: False
  feasibility_check_no_poses: 5
  publish_feedback: False
-    
+
  # Robot
-         
+
  max_vel_x: 0.4
  max_vel_x_backwards: 0.2
  max_vel_y: 0.1
@@ -30,14 +30,14 @@ TebLocalPlannerROS:
    type: "point"
 
  # GoalTolerance
-    
+
  xy_goal_tolerance: 0.2
  yaw_goal_tolerance: 0.1
  free_goal_vel: False
  complete_global_plan: True
-    
+
  # Obstacles
-    
+
  min_obstacle_dist: 0.25 # This value must also include our robot radius, since footprint_model is set to "point".
  inflation_dist: 0.6
  include_costmap_obstacles: True
@@ -48,7 +48,7 @@ TebLocalPlannerROS:
  costmap_converter_rate: 5
 
  # Optimization
-    
+
  no_inner_iterations: 5
  no_outer_iterations: 4
  optimization_activate: True
@@ -82,7 +82,7 @@ TebLocalPlannerROS:
  selection_prefer_initial_plan: 0.9
  selection_obst_cost_scale: 1.0
  selection_alternative_time_cost: False
- 
+
  roadmap_graph_no_samples: 15
  roadmap_graph_area_width: 5
  roadmap_graph_area_length_scale: 1.0
@@ -97,7 +97,7 @@ TebLocalPlannerROS:
  visualize_with_time_as_z_axis_scale: False
 
 # Recovery
- 
+
  shrink_horizon_backup: True
  shrink_horizon_min_duration: 10
  oscillation_recovery: True
