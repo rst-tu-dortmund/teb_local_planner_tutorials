@@ -8,8 +8,13 @@ and without any URDF models. However, they are easily extendable and integrable 
 
 Refer to the [teb_local_planner](http://wiki.ros.org/teb_local_planner) ROS wiki page for more information.
 
-**Dependencies:**
-
- * *navigation stack* and *teb_local_planner* package
- * *stage*: `sudo apt-get install ros-kinetic-stage-ros`
-
+# Using
+(Tested OK on ubuntu 18.04 LTS + ros-melodic)
+- install *navigation stack* and *teb_local_planner* package
+- Build [**fixed stage_ros**](https://github.com/AMRobots/stage_ros):
+```
+$ git clone https://github.com/AMRobots/stage_ros.git
+$ cd ../
+$ catkin_make --only-pkg-with-deps stage_ros
+$ source devel/setup.bash
+```
